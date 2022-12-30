@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Studio Ghibli New Tab",
   "short_name": "Ghibli",
   "description": "Still from a Studio Ghibli movie as the Chrome new tab background!",
   "homepage_url": "https://github.com/zakwht/ghibli-chrome",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "author": "Zak White",
   "icons": {
     "16": "icons/icon16.png",
@@ -15,9 +15,8 @@
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "content_security_policy": "script-src 'self'; object-src 'self'",
-  "permissions": [
-    "activeTab",
-    "declarativeContent"
-  ]
+  "content_security_policy": {
+    "script-src": "self",
+    "object-src": "self"
+  }
 }
