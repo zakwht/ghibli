@@ -12,7 +12,7 @@ Browser extension designed to showcase still shots from Studio Ghibli films.
 * Python 3 (built with 3.7.3)
 
 #### Scripts
-* `run`: runs the app in development mode
+* `start`: runs the app in development mode
 * `build`: builds the app for production, including scraping the Studio Ghibli website for still shots and compressing the extension files
 
 ### Acknowledgments
