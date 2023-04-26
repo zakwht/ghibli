@@ -5,7 +5,7 @@
   "short_name": "Ghibli",
   "description": "Still from a Studio Ghibli movie as the Chrome new tab background!",
   "homepage_url": "https://github.com/zakwht/ghibli-chrome",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Zak White",
   "icons": {
     "16": "icons/icon16.png",
