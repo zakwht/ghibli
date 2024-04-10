@@ -20,6 +20,7 @@
     "object-src": "self"
   },
   "permissions": [
-    "topSites"
+    "topSites",
+    "favicon"
   ]
 }

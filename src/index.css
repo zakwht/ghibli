@@ -3,6 +3,9 @@ main {
   width: 100vw;
   background-size: cover;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.33em;
 }
 
@@ -13,7 +16,7 @@ html, body {
 
 input {
   display: block;
-  margin: auto;
+  /* margin: auto; */
   width: 18em;
   height: 2em;
   border-radius: 2em;
@@ -35,4 +38,43 @@ footer {
   padding: 1em;
   color: white;
   text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  display: inline-block;
+  text-align: center;
+  width: 112px;
+  text-wrap: nowrap;
+}
+
+figure {
+  margin: 24px auto 12px;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+label {
+  font-size: 13px;
+  text-overflow: ellipsis;
+  width: 100px;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  text-shadow:
+    0.07em 0 black,
+    0 0.07em black,
+    -0.07em 0 black,
+    0 -0.07em black;
 }

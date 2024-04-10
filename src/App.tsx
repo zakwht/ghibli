@@ -1,5 +1,6 @@
 import React from "react";
 import stills from "./stills.json";
+import { TopSites } from "./TopSites";
 
 const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   if (e.key !== "Enter") return;
@@ -40,6 +41,7 @@ export const App = () => {
         spellCheck="false"
         onKeyDown={handleKeyDown}
       />
+      <TopSites />
       <footer>
         <span>{still.title}</span>
         <span>
