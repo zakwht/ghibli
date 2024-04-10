@@ -8,7 +8,9 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   window.open(`https://google.com/search?q=${URI}`, "_self");
 };
 
-const randomStill = () => stills[Math.floor(Math.random() * stills.length)];
+// will be a user option eventually
+const randomStill = () => 
+  stills.filter((s) => s.english !== "Earwig and the Witch")[Math.floor(Math.random() * stills.length)];
 
 const getStill = () => {
   const stored = localStorage.getItem("ghibli-extension-still");
