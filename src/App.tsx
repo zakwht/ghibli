@@ -11,8 +11,10 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 };
 
 // will be a user option eventually
-const randomStill = () => 
-  stills.filter((s) => s.english !== "Earwig and the Witch")[Math.floor(Math.random() * stills.length)];
+const randomStill = () =>
+  stills.filter((s) => s.english !== "Earwig and the Witch")[
+    Math.floor(Math.random() * stills.length)
+  ];
 
 const getStill = () => {
   const stored = localStorage.getItem("ghibli-extension-still");
@@ -32,10 +34,9 @@ new Image().src = nextStill.url;
 localStorage.setItem("ghibli-extension-still", JSON.stringify(nextStill));
 
 export const App = () => {
-
-  const [history, setHistory] = useState<HistoryURL[]>([])
+  const [history, setHistory] = useState<HistoryURL[]>([]);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    searchHistory(e.currentTarget.value).then(setHistory)
+    searchHistory(e.currentTarget.value).then(setHistory);
 
   return (
     <main
@@ -53,9 +54,7 @@ export const App = () => {
           onChange={handleChange}
           className={history.length ? "hideBorders" : ""}
         />
-        <History 
-          history={history}
-        />
+        <History history={history} />
         <TopSites />
       </div>
       <footer>

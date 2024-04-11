@@ -9,11 +9,13 @@ main {
   font-size: 20px;
 }
 
-html, body {
+html,
+body {
   margin: 0 !important;
   overflow: hidden;
 }
 
+/* SEARCH BAR */
 input {
   display: block;
   width: 18em;
@@ -24,7 +26,7 @@ input {
   padding: 0.5em 2.5em;
   font-size: 1.15em;
   box-shadow: 0 1px 8px 0 rgba(32, 32, 32, 48%);
-  background: url(./search.svg) no-repeat 1em;
+  background: url(./svg/search.svg) no-repeat 1em;
   background-color: white;
 }
 
@@ -32,6 +34,7 @@ input.hideBorders:focus {
   border-radius: 1.5em 1.5em 0 0;
 }
 
+/* FOOTER (film label) */
 footer {
   position: fixed;
   bottom: 0;
@@ -40,9 +43,12 @@ footer {
   flex-direction: column;
   padding: 1em;
   color: white;
-  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black,
+    -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black,
+    0.05em 0.05em black;
 }
 
+/* TOPSITES */
 nav {
   display: flex;
   margin-top: 12px;
@@ -58,7 +64,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: rgba(0, 0, 0, 0.2)
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 figure {
@@ -82,10 +88,13 @@ label {
   text-align: center;
   cursor: pointer;
   color: white;
-  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black,
+    -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black,
+    0.05em 0.05em black;
   font-family: system-ui, sans-serif;
 }
 
+/* SEARCH HISTORY */
 input:focus + ol {
   display: initial;
 }
@@ -93,7 +102,6 @@ input:focus + ol {
 ol {
   display: none;
   position: absolute;
-  /* padding: 0 0 0.25em; */
   padding: 0;
   list-style: none;
   background: white;
@@ -110,7 +118,7 @@ ol li a {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.15em;
-  background: url(./history.svg) no-repeat 1em;
+  background: url(./svg/history.svg) no-repeat 1em;
   text-decoration: none;
   cursor: default;
 }

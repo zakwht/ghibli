@@ -14,32 +14,25 @@ function faviconURL(u: string) {
   return url.toString();
 }
 
-const stripTitle = (t: string) => t.split(/\s+(-|•|\||–)\s+/)[0]
+const stripTitle = (t: string) => t.split(/\s+(-|•|\||–)\s+/)[0];
 
 export const TopSites = () => {
-
-  const [topSites, setTopSites] = useState<TopSiteURL[]>([])
+  const [topSites, setTopSites] = useState<TopSiteURL[]>([]);
 
   useEffect(() => {
-    getTopSites().then(setTopSites)
-  }, [])
+    getTopSites().then(setTopSites);
+  }, []);
 
   return (
     <nav>
-      {topSites.slice(0,5).map(({title, url, src}) => (
-        <a
-          key={url}
-          href={url} target="_self">
-            <figure>
-              <img 
-                src={src || faviconURL(url)} 
-                alt="favicon"
-                width="24"
-              />
-            </figure>
+      {topSites.slice(0, 5).map(({ title, url, src }) => (
+        <a key={url} href={url} target="_self">
+          <figure>
+            <img src={src || faviconURL(url)} alt="favicon" width="24" />
+          </figure>
           <label>{stripTitle(title)}</label>
         </a>
       ))}
     </nav>
-  )
-}
+  );
+};
