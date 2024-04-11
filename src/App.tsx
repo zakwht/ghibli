@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import stills from "./stills.json";
 import { TopSites } from "./TopSites";
 import { History, HistoryURL } from "./History";
+import { searchHistory } from "./chromeHandler";
 
 const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   if (e.key !== "Enter") return;
@@ -30,15 +31,11 @@ const nextStill = randomStill();
 new Image().src = nextStill.url;
 localStorage.setItem("ghibli-extension-still", JSON.stringify(nextStill));
 
-if (process.env.NODE_ENV === "development") document.title = "Ghibli Extension | Dev"
-
 export const App = () => {
 
   const [history, setHistory] = useState<HistoryURL[]>([])
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    chrome.history.search({"text": e.currentTarget.value}).then(setHistory)
-  }  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    searchHistory(e.currentTarget.value).then(setHistory)
 
   return (
     <main
@@ -48,18 +45,18 @@ export const App = () => {
       data-alt={still.alt}
     >
       <div>
-      <input
-        placeholder="Search Google or type a URL"
-        autoCorrect="false"
-        spellCheck="false"
-        onKeyDown={handleKeyDown}
-        onChange={handleChange}
-        className={history.length ? "hideBorders" : ""}
-      />
-      <History 
-        history={history}
-      />
-      <TopSites />
+        <input
+          placeholder="Search Google or type a URL"
+          autoCorrect="false"
+          spellCheck="false"
+          onKeyDown={handleKeyDown}
+          onChange={handleChange}
+          className={history.length ? "hideBorders" : ""}
+        />
+        <History 
+          history={history}
+        />
+        <TopSites />
       </div>
       <footer>
         <span>{still.title}</span>
