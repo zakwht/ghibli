@@ -7,7 +7,7 @@ export interface HistoryURL {
 
 const filterDuplicateTitles = (h: HistoryURL[]) =>
   h.reduce<HistoryURL[]>((acc, item) => {
-    if (acc.findIndex((i) => i.title === item.title) < 0) acc.push(item);
+    if (item.title && acc.findIndex((i) => i.title === item.title) < 0) acc.push(item);
     return acc;
   }, []);
 
@@ -26,3 +26,5 @@ export const History: FC<{ history: HistoryURL[] }> = ({ history }) => {
     </ol>
   );
 };
+
+// links literallyt aren't working

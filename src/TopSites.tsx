@@ -28,7 +28,7 @@ export const TopSites = () => {
       {topSites.slice(0, 5).map(({ title, url, src }) => (
         <a key={url} href={url} target="_self">
           <figure>
-            <img src={src || faviconURL(url)} alt="favicon" width="24" />
+            <img draggable="false" src={src || faviconURL(url)} alt="favicon" width="24" />
           </figure>
           <label>{stripTitle(title)}</label>
         </a>
