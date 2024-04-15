@@ -137,3 +137,29 @@ ol li span {
   vertical-align: middle;
   line-height: 2em;
 }
+
+/* APP LAUNCHER */
+header {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+}
+
+header div {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+header a {
+  color: initial;
+  text-decoration: none;
+  display: block;
+}
+
+header div span {
+  background: url(https://ssl.gstatic.com/gb/images/sprites/p_2x_a6cad964874d.png) no-repeat 1em;
+  background-size: 53px 2547px;
+  display: block;
+  width: 48px;
+  height: 48px;
+}
