@@ -1,5 +1,6 @@
-if (process.env.NODE_ENV === "development")
-  document.title = "Ghibli Extension | Dev";
+export const inDev = process.env.NODE_ENV === "development";
+
+if (inDev) document.title = "Ghibli Extension | Dev";
 
 export const devSites = [
   {
