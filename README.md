@@ -4,6 +4,7 @@
 [![Rating](https://img.shields.io/chrome-web-store/stars/fmdejajfcfdnbbanalgjibhcgbhihphd)](https://chrome.google.com/webstore/detail/studio-ghibli-new-tab/fmdejajfcfdnbbanalgjibhcgbhihphd)
 [![License](https://img.shields.io/github/license/zakwht/ghibli)](/LICENSE)
 [![Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Stills](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakwht%2Fghibli%2Fmain%2Fsrc%2Fstills.json&query=%24.length&label=stills)](./src/stills.json)
 
 Browser extension designed to showcase still shots from Studio Ghibli films. 
 
