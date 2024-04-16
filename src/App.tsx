@@ -11,11 +11,14 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   window.open(`https://google.com/search?q=${URI}`, "_self");
 };
 
-// will be a user option eventually
+const settings = JSON.parse(
+  localStorage.getItem("ghibli-extension-settings") || "{}"
+);
+
 const randomStill = () =>
-  stills.filter((s) => s.english !== "Earwig and the Witch")[
-    Math.floor(Math.random() * stills.length)
-  ];
+  (settings.hideCGI
+    ? stills.filter((s) => s.english !== "Earwig and the Witch")
+    : stills)[Math.floor(Math.random() * stills.length)];
 
 const getStill = () => {
   const stored = localStorage.getItem("ghibli-extension-still");
@@ -53,10 +56,12 @@ export const App = () => {
           spellCheck="false"
           onKeyDown={handleKeyDown}
           onChange={handleChange}
-          className={history.length ? "hideBorders" : ""}
+          className={
+            history.length && settings.filterHistory ? "hideBorders" : ""
+          }
         />
-        <History history={history} />
-        <TopSites />
+        {settings.filterHistory && <History history={history} />}
+        {settings.showTopSites && <TopSites />}
       </div>
       <footer>
         <span>{still.title}</span>
