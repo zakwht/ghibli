@@ -22,8 +22,7 @@
   "permissions": [
     "topSites",
     "favicon",
-    "history",
-    "storage"
+    "history"
   ],
   "options_ui": {
     "page": "options.html",
