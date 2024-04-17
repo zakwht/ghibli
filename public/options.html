@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Options</title>
+    <style>
+      form {
+        max-width: 480px;
+      }
+      button {
+        font-size: 1.1em;
+        padding: 4px 8px;
+      }
+      label {
+        font-size: 1.1em;
+      }
+      span {
+        display: block;
+        margin-bottom: 0.5em;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="settings">
+      <section>
+        <input type="checkbox" id="hideCGI" />
+        <label for="hideCGI"> Hide stills from CGI films </label>
+        <span>
+          Avoid showing images from films that clash with the traditional Ghibli
+          style (specifically <i>Earwig and the Witch</i>).
+        </span>
+      </section>
+      <section>
+        <input type="checkbox" id="showTopSites" />
+        <label for="showTopSites"> Show top sites </label>
+        <span>
+          Display links to top sites beneath the search bar, computed by Chrome.
+        </span>
+      </section>
+      <section>
+        <input type="checkbox" id="filterHistory" />
+        <label for="filterHistory"> Search user history </label>
+        <span>
+          Automatically populate search results based on browsing history.
+        </span>
+      </section>
+    </form>
+    <button id="save">Save</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>

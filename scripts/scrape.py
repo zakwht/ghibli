@@ -1,4 +1,3 @@
-from codecs import unicode_escape_decode, unicode_escape_encode
 from json import dumps
 import requests
 from bs4 import BeautifulSoup
@@ -34,4 +33,4 @@ for w in works:
     })
 
 print(dumps(stills))
-# python scrape.py > ../stills.json
+# python scrape.py > 

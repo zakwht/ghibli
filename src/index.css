@@ -3,17 +3,22 @@ main {
   width: 100vw;
   background-size: cover;
   display: flex;
-  font-size: 1.33em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
-html, body {
+html,
+body {
   margin: 0 !important;
   overflow: hidden;
+  font-family: system-ui, sans-serif;
 }
 
+/* SEARCH BAR */
 input {
   display: block;
-  margin: auto;
   width: 18em;
   height: 2em;
   border-radius: 2em;
@@ -22,10 +27,15 @@ input {
   padding: 0.5em 2.5em;
   font-size: 1.15em;
   box-shadow: 0 1px 8px 0 rgba(32, 32, 32, 48%);
-  background: url(./search.svg) no-repeat 1em;
+  background: url(./svg/search.svg) no-repeat 1em;
   background-color: white;
 }
 
+input.hideBorders:focus, input.hideBorders:has(+ ol:active) {
+  border-radius: 1.5em 1.5em 0 0;
+}
+
+/* FOOTER (film label) */
 footer {
   position: fixed;
   bottom: 0;
@@ -34,5 +44,122 @@ footer {
   flex-direction: column;
   padding: 1em;
   color: white;
-  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black,
+    -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black,
+    0.05em 0.05em black;
+}
+
+/* TOPSITES */
+nav {
+  display: flex;
+  margin-top: 12px;
+}
+
+nav a {
+  display: inline-block;
+  text-align: center;
+  width: 105px;
+  text-wrap: nowrap;
+  padding: 20px 0 16px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+figure {
+  margin: 0 auto 12px;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+label {
+  font-size: 13px;
+  text-overflow: ellipsis;
+  width: 100px;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black,
+    -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black,
+    0.05em 0.05em black;
+}
+
+/* SEARCH HISTORY */
+input:focus + ol, ol:active {
+  display: initial;
+  box-shadow: 0 8px 8px -4px rgba(32, 32, 32, 48%)
+}
+
+ol {
+  display: none;
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  background: white;
+  margin: 0;
+  border-radius: 0 0 1.5em 1.5em;
+}
+
+ol li a {
+  display: block;
+  width: 18em;
+  padding: 0.25em 2.5em;
+  color: #333;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.15em;
+  background: url(./svg/history.svg) no-repeat 1em;
+  text-decoration: none;
+  cursor: default;
+}
+
+ol li:last-of-type {
+  border-radius: 0 0 1.5em 1.5em;
+}
+
+ol li:hover {
+  background-color: #ddd;
+}
+
+ol li span {
+  font-size: 0.75em;
+  vertical-align: middle;
+  line-height: 2em;
+}
+
+/* APP LAUNCHER */
+header {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+}
+
+header div {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+header a {
+  color: initial;
+  text-decoration: none;
+  display: block;
+}
+
+header div span {
+  background: url(https://ssl.gstatic.com/gb/images/sprites/p_2x_a6cad964874d.png) no-repeat 1em;
+  background-size: 53px 2547px;
+  display: block;
+  width: 48px;
+  height: 48px;
 }

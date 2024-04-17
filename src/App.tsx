@@ -1,5 +1,10 @@
-import React from "react";
-import stills from "./stills.json";
+import React, { useState } from "react";
+import stills from "./json/stills.json";
+import filteredStills from "./json/filtered.json";
+import { TopSites } from "./TopSites";
+import { History, HistoryURL } from "./History";
+import { searchHistory } from "./chromeHandler";
+// import { Launcher } from "./Launcher";
 
 const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   if (e.key !== "Enter") return;
@@ -7,7 +12,14 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   window.open(`https://google.com/search?q=${URI}`, "_self");
 };
 
-const randomStill = () => stills[Math.floor(Math.random() * stills.length)];
+const settings = JSON.parse(
+  localStorage.getItem("ghibli-extension-settings") || "{}"
+);
+
+const randomStill = () =>
+  settings.hideCGI
+    ? filteredStills[Math.floor(Math.random() * filteredStills.length)]
+    : stills[Math.floor(Math.random() * stills.length)];
 
 const getStill = () => {
   const stored = localStorage.getItem("ghibli-extension-still");
@@ -27,6 +39,10 @@ new Image().src = nextStill.url;
 localStorage.setItem("ghibli-extension-still", JSON.stringify(nextStill));
 
 export const App = () => {
+  const [history, setHistory] = useState<HistoryURL[]>([]);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    searchHistory(e.currentTarget.value).then(setHistory);
+
   return (
     <main
       style={{
@@ -34,12 +50,20 @@ export const App = () => {
       }}
       data-alt={still.alt}
     >
-      <input
-        placeholder="Search Google or type a URL"
-        autoCorrect="false"
-        spellCheck="false"
-        onKeyDown={handleKeyDown}
-      />
+      <div>
+        <input
+          placeholder="Search Google or type a URL"
+          autoCorrect="false"
+          spellCheck="false"
+          onKeyDown={handleKeyDown}
+          onChange={handleChange}
+          className={
+            history.length && settings.filterHistory ? "hideBorders" : ""
+          }
+        />
+        {settings.filterHistory && <History history={history} />}
+        {settings.showTopSites && <TopSites />}
+      </div>
       <footer>
         <span>{still.title}</span>
         <span>
