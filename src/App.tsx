@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import stills from "./stills.json";
+import stills from "./json/stills.json";
+import filteredStills from "./json/filtered.json";
 import { TopSites } from "./TopSites";
 import { History, HistoryURL } from "./History";
 import { searchHistory } from "./chromeHandler";
@@ -16,9 +17,9 @@ const settings = JSON.parse(
 );
 
 const randomStill = () =>
-  (settings.hideCGI
-    ? stills.filter((s) => s.english !== "Earwig and the Witch")
-    : stills)[Math.floor(Math.random() * stills.length)];
+  settings.hideCGI
+    ? filteredStills[Math.floor(Math.random() * filteredStills.length)]
+    : stills[Math.floor(Math.random() * stills.length)];
 
 const getStill = () => {
   const stored = localStorage.getItem("ghibli-extension-still");
