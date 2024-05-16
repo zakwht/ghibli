@@ -4,7 +4,7 @@ import filteredStills from "./json/filtered.json";
 import { TopSites } from "./TopSites";
 import { History, HistoryURL } from "./History";
 import { searchHistory } from "./chromeHandler";
-// import { Launcher } from "./Launcher";
+import { Launcher } from "./Launcher";
 
 const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   if (e.key !== "Enter") return;
@@ -70,6 +70,7 @@ export const App = () => {
           {still.english} ({still.date.slice(0, 4)})
         </span>
       </footer>
+      <Launcher />
     </main>
   );
 };

@@ -31,7 +31,8 @@ input {
   background-color: white;
 }
 
-input.hideBorders:focus, input.hideBorders:has(+ ol:active) {
+input.hideBorders:focus,
+input.hideBorders:has(+ ol:active) {
   border-radius: 1.5em 1.5em 0 0;
 }
 
@@ -50,12 +51,12 @@ footer {
 }
 
 /* TOPSITES */
-nav {
+nav.topSites {
   display: flex;
   margin-top: 12px;
 }
 
-nav a {
+nav.topSites a {
   display: inline-block;
   text-align: center;
   width: 105px;
@@ -64,7 +65,7 @@ nav a {
   border-radius: 8px;
 }
 
-nav a:hover {
+nav.topSites a:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -95,9 +96,10 @@ label {
 }
 
 /* SEARCH HISTORY */
-input:focus + ol, ol:active {
+input:focus + ol,
+ol:active {
   display: initial;
-  box-shadow: 0 8px 8px -4px rgba(32, 32, 32, 48%)
+  box-shadow: 0 8px 8px -4px rgba(32, 32, 32, 48%);
 }
 
 ol {
@@ -145,19 +147,57 @@ header {
   right: 12px;
 }
 
-header div {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+header button {
+  background: none;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  padding-top: 4px;
 }
 
-header a {
+header button:hover,
+header button:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+header nav.launcher {
+  display: none;
+  grid-template-columns: repeat(3, auto);
+  background-color: #f8fafd;
+  border-radius: 24px;
+  padding: 8px 16px;
+  border: 8px solid #e9eef6;
+  position: fixed;
+  top: 64px;
+  right: 12px;
+  max-height: 540px;
+  overflow: scroll;
+}
+
+header button:focus ~ nav.launcher,
+nav.launcher:active {
+  display: grid;
+}
+
+nav.launcher a {
   color: initial;
   text-decoration: none;
-  display: block;
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 16px;
+  font-weight: 300;
+  font-size: 0.8em;
+  gap: 4px;
+  text-align: center;
 }
 
-header div span {
-  background: url(https://ssl.gstatic.com/gb/images/sprites/p_2x_a6cad964874d.png) no-repeat 1em;
+nav.launcher span {
+  background: url(https://ssl.gstatic.com/gb/images/sprites/p_2x_a6cad964874d.png)
+    no-repeat 1em;
   background-size: 53px 2547px;
   display: block;
   width: 48px;
