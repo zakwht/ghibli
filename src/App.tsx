@@ -70,7 +70,7 @@ export const App = () => {
           {still.english} ({still.date.slice(0, 4)})
         </span>
       </footer>
-      <Launcher />
+      {settings.showLauncher && <Launcher />}
     </main>
   );
 };
