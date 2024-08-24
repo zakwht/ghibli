@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Account",
+    "pos": "0px -1798px",
+    "url": "https://myaccount.google.com/?utm_source=OGB&utm_medium=app"
+  },
+  {
+    "name": "Search",
+    "pos": "0px -1392px",
+    "url": "https://www.google.com/"
+  },
+  {
+    "name": "Maps",
+    "pos": "0px -1044px",
+    "url": "https://maps.google.com/"
+  },
+  {
+    "name": "YouTube",
+    "pos": "0px -2378px",
+    "url": "https://www.youtube.com/"
+  },
+  {
+    "name": "Play",
+    "pos": "0px -290px",
+    "url": "https://play.google.com/"
+  },
+  {
+    "name": "News",
+    "pos": "0px -1334px",
+    "url": "https://news.google.com/"
+  },
+  {
+    "name": "Gmail",
+    "pos": "0px -2436px",
+    "url": "https://mail.google.com/mail/"
+  },
+  {
+    "name": "Meet",
+    "pos": "0px -348px",
+    "url": "https://meet.google.com/?hs=197"
+  },
+  {
+    "name": "Chat",
+    "pos": "0px -580px",
+    "url": "https://chat.google.com/"
+  },
+  {
+    "name": "Contacts",
+    "pos": "0px -1624px",
+    "url": "https://contacts.google.com/"
+  },
+  {
+    "name": "Drive",
+    "pos": "0px -116px",
+    "url": "https://drive.google.com/"
+  },
+  {
+    "name": "Calendar",
+    "pos": "0px -1276px",
+    "url": "https://calendar.google.com/calendar"
+  },
+  {
+    "name": "Translate",
+    "pos": "0px -1682px",
+    "url": "https://translate.google.com/"
+  },
+  {
+    "name": "Photos",
+    "pos": "0px -870px",
+    "url": "https://photos.google.com/"
+  },
+  {
+    "name": "Shopping",
+    "pos": "0px -174px",
+    "url": "https://www.google.com/shopping?source=og"
+  },
+  {
+    "name": "Finance",
+    "pos": "0px -1508px",
+    "url": "https://www.google.com/finance"
+  },
+  {
+    "name": "Docs",
+    "pos": "0px -2088px",
+    "url": "https://docs.google.com/document/?usp=docs_alc"
+  },
+  {
+    "name": "Sheets",
+    "pos": "0px -2146px",
+    "url": "https://docs.google.com/spreadsheets/?usp=sheets_alc"
+  },
+  {
+    "name": "Slides",
+    "pos": "0px 0px",
+    "url": "https://docs.google.com/presentation/?usp=slides_alc"
+  },
+  {
+    "name": "Books",
+    "pos": "0px -522px",
+    "url": "https://books.google.com/"
+  },
+  {
+    "name": "Blogger",
+    "pos": "0px -2494px",
+    "url": "https://www.blogger.com/"
+  },
+  {
+    "name": "Keep",
+    "pos": "0px -1102px",
+    "url": "https://keep.google.com/"
+  },
+  {
+    "name": "Jamboard",
+    "pos": "0px -2030px",
+    "url": "https://jamboard.google.com/"
+  },
+  {
+    "name": "Earth",
+    "pos": "0px -1566px",
+    "url": "https://earth.google.com/web/"
+  },
+  {
+    "name": "Saved",
+    "pos": "0px -1972px",
+    "url": "https://www.google.com/save"
+  },
+  {
+    "name": "Arts and Culture",
+    "pos": "0px -638px",
+    "url": "https://artsandculture.google.com/?utm_source=ogs.google.com&utm_medium=referral"
+  },
+  {
+    "name": "Google Ads",
+    "pos": "0px -1218px",
+    "url": "https://ads.google.com/home/?subid=ww-ww-xs-ip-awhc-a-ogb_cons!o2"
+  },
+  {
+    "name": "Travel",
+    "pos": "0px -754px",
+    "url": "https://www.google.com/travel/?dest_src=al"
+  },
+  {
+    "name": "Forms",
+    "pos": "0px -232px",
+    "url": "https://docs.google.com/forms/"
+  },
+  {
+    "name": "Google Store",
+    "pos": "0px -2204px",
+    "url": "https://store.google.com/?utm_source=app_launcher&utm_medium=google_oo&utm_campaign=GS107345"
+  },
+  {
+    "name": "Chrome Web Store",
+    "pos": "0px -1914px",
+    "url": "https://chrome.google.com/webstore?utm_source=app-launcher"
+  }
+]

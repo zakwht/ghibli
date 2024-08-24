@@ -24,7 +24,7 @@ export const TopSites = () => {
   }, []);
 
   return (
-    <nav>
+    <nav className="topSites">
       {topSites.slice(0, 5).map(({ title, url, src }) => (
         <a key={url} href={url} target="_self">
           <figure>
