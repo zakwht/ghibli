@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import stills from "./json/stills.json";
-import filteredStills from "./json/filtered.json";
 import { TopSites } from "./TopSites";
 import { History, HistoryURL } from "./History";
 import { searchHistory } from "./chromeHandler";
 import { Launcher } from "./Launcher";
+import { getSettings, getStill, preloadNextStill } from "./util";
 
 const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   if (e.key !== "Enter") return;
@@ -12,31 +11,9 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   window.open(`https://google.com/search?q=${URI}`, "_self");
 };
 
-const settings = JSON.parse(
-  localStorage.getItem("ghibli-extension-settings") || "{}"
-);
-
-const randomStill = () =>
-  settings.hideCGI
-    ? filteredStills[Math.floor(Math.random() * filteredStills.length)]
-    : stills[Math.floor(Math.random() * stills.length)];
-
-const getStill = () => {
-  const stored = localStorage.getItem("ghibli-extension-still");
-  if (stored)
-    try {
-      return JSON.parse(stored);
-    } catch (e) {
-      return randomStill();
-    }
-  else return randomStill();
-};
-
-const still = getStill();
-// preload next image
-const nextStill = randomStill();
-new Image().src = nextStill.url;
-localStorage.setItem("ghibli-extension-still", JSON.stringify(nextStill));
+const settings = getSettings();
+const still = getStill(settings.hideCGI);
+preloadNextStill(settings.hideCGI);
 
 export const App = () => {
   const [history, setHistory] = useState<HistoryURL[]>([]);
