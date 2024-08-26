@@ -28,16 +28,18 @@ export const App = () => {
       data-alt={still.alt}
     >
       <div>
-        <input
-          placeholder="Search Google or type a URL"
-          autoCorrect="false"
-          spellCheck="false"
-          onKeyDown={handleKeyDown}
-          onChange={handleChange}
-          className={
-            history.length && settings.filterHistory ? "hideBorders" : ""
-          }
-        />
+        {settings.showSearchBar && (
+          <input
+            placeholder="Search Google or type a URL"
+            autoCorrect="false"
+            spellCheck="false"
+            onKeyDown={handleKeyDown}
+            onChange={handleChange}
+            className={
+              history.length && settings.filterHistory ? "hideBorders" : ""
+            }
+          />
+        )}
         {settings.filterHistory && <History history={history} />}
         {settings.showTopSites && <TopSites />}
       </div>
