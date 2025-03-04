@@ -1,0 +1,7 @@
+Still from a Studio Ghibli movie as the Chrome new tab background!
+
+This extension sets the Chrome new tab background to one of over 1,000 still shots from one of 27 Studio Ghibli movies. 
+
+All images are retrieved from the Studio Ghibli website (https://www.ghibli.jp/).
+
+The extension can be personalized by the options page (chrome://extensions/?options=fmdejajfcfdnbbanalgjibhcgbhihphd), accessed normally through the browser extension settings. The user-customizable features are: displaying or hiding the search bar, displaying or hiding the Google App Launcher, searching through browsing history, displaying quick-links to user's top sites, and opting-in or -out of stills from CGI films.
