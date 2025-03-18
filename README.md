@@ -8,7 +8,14 @@
 
 Browser extension designed to showcase still shots from Studio Ghibli films. 
 
-![Screenshot](./screenshot.png)
+![Screenshot](./webstore/top-sites.png)
+
+### Features
+
+- See a new Ghibli still as the background for each new tab opened
+- Search user history (`chrome.history` API)
+- Quick links to top sites (`chrome.topSites` API)
+- Access the Google app launcher
 
 ### Development
 
@@ -27,6 +34,8 @@ pip3 install -r requirements.txt
 #### Scripts
 * `start`: runs the app in development mode
 * `build`: builds the app for production, including scraping the Studio Ghibli website for still shots and compressing the extension files
+* `quick`: builds the app for production without executing the scraping script
+* `options`: opens the extensions options page in the browser
 
 ### Acknowledgments
 * __Designed with images retrieved from__ [Studio Ghibli](https://www.ghibli.jp/)

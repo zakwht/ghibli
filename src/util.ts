@@ -3,6 +3,7 @@ import filteredStills from "./json/filtered.json";
 
 export interface Settings {
   hideCGI: boolean;
+  showSearchBar: boolean;
   showTopSites: boolean;
   filterHistory: boolean;
   showLauncher: boolean;
@@ -24,13 +25,20 @@ const STILLKEY = "ghibli-extension-still";
 
 // get stored settings or set default settings
 export const getSettings = (): Settings => {
-  let settings = JSON.parse(localStorage.getItem(SETTINGSKEY) || "{}");
-  if (Object.keys(settings).length) return settings;
-  settings = {
+  let defaultSettings: Settings = {
+    showSearchBar: true,
     hideCGI: true,
     showTopSites: true,
     filterHistory: false,
     showLauncher: true
+  };
+
+  let settings: Settings = JSON.parse(
+    localStorage.getItem(SETTINGSKEY) || "{}"
+  );
+  settings = {
+    ...defaultSettings,
+    ...settings
   };
   localStorage.setItem(SETTINGSKEY, JSON.stringify(settings));
   return settings;
